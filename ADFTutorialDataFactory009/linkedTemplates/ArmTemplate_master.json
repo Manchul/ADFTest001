@@ -7,9 +7,29 @@
 			"metadata": "Data Factory Name",
 			"defaultValue": "ADFTutorialDataFactory009"
 		},
+		"ADLS Gen2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ADLS Gen2'"
+		},
 		"AzureDataLakeStorageSource_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorageSource'"
+		},
+		"AzureSqlDWLinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDWLinkedService'"
+		},
+		"AzureSqlDatabaseLinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabaseLinkedService'"
+		},
+		"PolybaseStorage_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'PolybaseStorage'"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
 		},
 		"InputDataset_properties_typeProperties_fileName": {
 			"type": "string",
@@ -23,9 +43,17 @@
 			"type": "string",
 			"defaultValue": "adftutorial/output"
 		},
+		"ADLS Gen2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adfdemo002stor.dfs.core.windows.net"
+		},
 		"AzureDataLakeStorageSource_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adfdemo002stor.dfs.core.windows.net"
+		},
+		"PolybaseStorage_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adfdemo003stor.dfs.core.windows.net"
 		},
 		"containerUri": {
 			"type": "string",
@@ -54,11 +82,32 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"ADLS Gen2_accountKey": {
+						"value": "[parameters('ADLS Gen2_accountKey')]"
+					},
 					"AzureDataLakeStorageSource_accountKey": {
 						"value": "[parameters('AzureDataLakeStorageSource_accountKey')]"
 					},
+					"AzureSqlDWLinkedService_connectionString": {
+						"value": "[parameters('AzureSqlDWLinkedService_connectionString')]"
+					},
+					"AzureSqlDatabaseLinkedService_connectionString": {
+						"value": "[parameters('AzureSqlDatabaseLinkedService_connectionString')]"
+					},
+					"PolybaseStorage_accountKey": {
+						"value": "[parameters('PolybaseStorage_accountKey')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"ADLS Gen2_properties_typeProperties_url": {
+						"value": "[parameters('ADLS Gen2_properties_typeProperties_url')]"
+					},
 					"AzureDataLakeStorageSource_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorageSource_properties_typeProperties_url')]"
+					},
+					"PolybaseStorage_properties_typeProperties_url": {
+						"value": "[parameters('PolybaseStorage_properties_typeProperties_url')]"
 					},
 					"InputDataset_properties_typeProperties_fileName": {
 						"value": "[parameters('InputDataset_properties_typeProperties_fileName')]"
