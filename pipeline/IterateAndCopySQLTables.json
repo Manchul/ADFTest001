@@ -43,7 +43,14 @@
 										"useTypeDefault": false
 									}
 								},
-								"enableStaging": true
+								"enableStaging": true,
+								"stagingSettings": {
+									"linkedServiceName": {
+										"referenceName": "AzureBlobStorage1",
+										"type": "LinkedServiceReference"
+									},
+									"path": "polybase"
+								}
 							},
 							"inputs": [
 								{
