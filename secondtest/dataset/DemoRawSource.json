@@ -1,0 +1,25 @@
+{
+	"name": "DemoRawSource",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADSL2LinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureBlobFSFile",
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": "\t",
+				"rowDelimiter": "",
+				"quoteChar": "\"",
+				"nullValue": "\\N",
+				"encodingName": null,
+				"treatEmptyAsNull": true,
+				"skipLineCount": 18,
+				"firstRowAsHeader": false
+			},
+			"fileName": "un_test_file.txt",
+			"folderPath": "adfdemo/demo_input"
+		}
+	}
+}
