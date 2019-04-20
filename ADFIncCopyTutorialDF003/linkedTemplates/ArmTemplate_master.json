@@ -15,14 +15,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabaseLinkedService'"
 		},
-		"SinkDataset_properties_typeProperties_fileName": {
-			"type": "string",
-			"defaultValue": "@CONCAT('Incremental-', pipeline().RunId, '.txt')"
-		},
-		"SinkDataset_properties_typeProperties_folderPath": {
-			"type": "string",
-			"defaultValue": "adfdemo/incrementalcopy"
-		},
 		"ADSL2LinkedService_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adfdemo003sa.dfs.core.windows.net"
@@ -62,12 +54,6 @@
 					},
 					"ADSL2LinkedService_properties_typeProperties_url": {
 						"value": "[parameters('ADSL2LinkedService_properties_typeProperties_url')]"
-					},
-					"SinkDataset_properties_typeProperties_fileName": {
-						"value": "[parameters('SinkDataset_properties_typeProperties_fileName')]"
-					},
-					"SinkDataset_properties_typeProperties_folderPath": {
-						"value": "[parameters('SinkDataset_properties_typeProperties_folderPath')]"
 					}
 				}
 			},

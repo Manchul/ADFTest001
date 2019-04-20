@@ -11,12 +11,6 @@
 		"AzureSqlDatabaseLinkedService_connectionString": {
 			"value": ""
 		},
-		"SinkDataset_properties_typeProperties_fileName": {
-			"value": "@CONCAT('Incremental-', pipeline().RunId, '.txt')"
-		},
-		"SinkDataset_properties_typeProperties_folderPath": {
-			"value": "adfdemo/incrementalcopy"
-		},
 		"ADSL2LinkedService_properties_typeProperties_url": {
 			"value": "https://adfdemo003sa.dfs.core.windows.net"
 		},
