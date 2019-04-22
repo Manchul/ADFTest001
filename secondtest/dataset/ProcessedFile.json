@@ -162,10 +162,6 @@
 				"skipLineCount": 0,
 				"firstRowAsHeader": false
 			},
-			"fileName": {
-				"value": "processed_file.txt\n",
-				"type": "Expression"
-			},
 			"folderPath": "adfdemo/stage"
 		}
 	}

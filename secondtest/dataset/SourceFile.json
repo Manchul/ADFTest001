@@ -7,8 +7,8 @@
 		},
 		"parameters": {
 			"skipLines": {
-				"type": "string",
-				"defaultValue": "18"
+				"type": "int",
+				"defaultValue": 18
 			}
 		},
 		"type": "AzureBlobFSFile",
@@ -175,7 +175,10 @@
 				"nullValue": "\\N",
 				"encodingName": null,
 				"treatEmptyAsNull": true,
-				"skipLineCount": 1,
+				"skipLineCount": {
+					"value": "@dataset().skipLines",
+					"type": "Expression"
+				},
 				"firstRowAsHeader": false
 			},
 			"fileName": "un_test_file.txt",
