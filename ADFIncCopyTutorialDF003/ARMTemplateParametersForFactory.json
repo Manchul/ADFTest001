@@ -5,13 +5,22 @@
 		"factoryName": {
 			"value": "ADFIncCopyTutorialDF003"
 		},
-		"ADSL2LinkedService_accountKey": {
+		"AzureStorageLinkedService_accountKey": {
 			"value": ""
 		},
-		"AzureSqlDatabaseLinkedService_connectionString": {
-			"value": ""
+		"ProcessedFile_properties_typeProperties_fileName": {
+			"value": "processed_file.txt\n"
 		},
-		"ADSL2LinkedService_properties_typeProperties_url": {
+		"ProcessedFile_properties_typeProperties_folderPath": {
+			"value": "adfdemo/stage"
+		},
+		"SourceFile_properties_typeProperties_fileName": {
+			"value": "un_test_file.txt"
+		},
+		"SourceFile_properties_typeProperties_folderPath": {
+			"value": "adfdemo/rawdata"
+		},
+		"AzureStorageLinkedService_properties_typeProperties_url": {
 			"value": "https://adfdemo003sa.dfs.core.windows.net"
 		}
 	}

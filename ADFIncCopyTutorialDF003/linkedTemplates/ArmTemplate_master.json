@@ -7,15 +7,27 @@
 			"metadata": "Data Factory Name",
 			"defaultValue": "ADFIncCopyTutorialDF003"
 		},
-		"ADSL2LinkedService_accountKey": {
+		"AzureStorageLinkedService_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'ADSL2LinkedService'"
+			"metadata": "Secure string for 'accountKey' of 'AzureStorageLinkedService'"
 		},
-		"AzureSqlDatabaseLinkedService_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabaseLinkedService'"
+		"ProcessedFile_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": "processed_file.txt\n"
 		},
-		"ADSL2LinkedService_properties_typeProperties_url": {
+		"ProcessedFile_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": "adfdemo/stage"
+		},
+		"SourceFile_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": "un_test_file.txt"
+		},
+		"SourceFile_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": "adfdemo/rawdata"
+		},
+		"AzureStorageLinkedService_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adfdemo003sa.dfs.core.windows.net"
 		},
@@ -46,14 +58,23 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"ADSL2LinkedService_accountKey": {
-						"value": "[parameters('ADSL2LinkedService_accountKey')]"
+					"AzureStorageLinkedService_accountKey": {
+						"value": "[parameters('AzureStorageLinkedService_accountKey')]"
 					},
-					"AzureSqlDatabaseLinkedService_connectionString": {
-						"value": "[parameters('AzureSqlDatabaseLinkedService_connectionString')]"
+					"AzureStorageLinkedService_properties_typeProperties_url": {
+						"value": "[parameters('AzureStorageLinkedService_properties_typeProperties_url')]"
 					},
-					"ADSL2LinkedService_properties_typeProperties_url": {
-						"value": "[parameters('ADSL2LinkedService_properties_typeProperties_url')]"
+					"ProcessedFile_properties_typeProperties_fileName": {
+						"value": "[parameters('ProcessedFile_properties_typeProperties_fileName')]"
+					},
+					"ProcessedFile_properties_typeProperties_folderPath": {
+						"value": "[parameters('ProcessedFile_properties_typeProperties_folderPath')]"
+					},
+					"SourceFile_properties_typeProperties_fileName": {
+						"value": "[parameters('SourceFile_properties_typeProperties_fileName')]"
+					},
+					"SourceFile_properties_typeProperties_folderPath": {
+						"value": "[parameters('SourceFile_properties_typeProperties_folderPath')]"
 					}
 				}
 			},

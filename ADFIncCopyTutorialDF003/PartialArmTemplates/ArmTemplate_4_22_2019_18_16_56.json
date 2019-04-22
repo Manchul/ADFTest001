@@ -6,30 +6,6 @@
 			"type": "string",
 			"metadata": "Data Factory Name",
 			"defaultValue": "ADFIncCopyTutorialDF003"
-		},
-		"AzureStorageLinkedService_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureStorageLinkedService'"
-		},
-		"ProcessedFile_properties_typeProperties_fileName": {
-			"type": "string",
-			"defaultValue": "processed_file.txt\n"
-		},
-		"ProcessedFile_properties_typeProperties_folderPath": {
-			"type": "string",
-			"defaultValue": "adfdemo/stage"
-		},
-		"SourceFile_properties_typeProperties_fileName": {
-			"type": "string",
-			"defaultValue": "un_test_file.txt"
-		},
-		"SourceFile_properties_typeProperties_folderPath": {
-			"type": "string",
-			"defaultValue": "adfdemo/rawdata"
-		},
-		"AzureStorageLinkedService_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adfdemo003sa.dfs.core.windows.net"
 		}
 	},
 	"variables": {
@@ -45,7 +21,6 @@
 					{
 						"name": "Copy Data1",
 						"type": "Copy",
-						"dependsOn": [],
 						"policy": {
 							"timeout": "7.00:00:00",
 							"retry": 0,
@@ -53,7 +28,6 @@
 							"secureOutput": false,
 							"secureInput": false
 						},
-						"userProperties": [],
 						"typeProperties": {
 							"source": {
 								"type": "AzureBlobFSSource",
@@ -117,13 +91,11 @@
 						"outputs": [
 							{
 								"referenceName": "ProcessedFile",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					}
-				],
-				"annotations": []
+				]
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/SourceFile')]",
@@ -139,7 +111,6 @@
 					"referenceName": "AzureStorageLinkedService",
 					"type": "LinkedServiceReference"
 				},
-				"annotations": [],
 				"type": "AzureBlobFSFile",
 				"structure": [
 					{
@@ -298,15 +269,12 @@
 						"firstRowAsHeader": false
 					},
 					"fileName": {
-						"value": "[parameters('ProcessedFile_properties_typeProperties_fileName')]",
+						"value": "processed_file.txt\n",
 						"type": "Expression"
 					},
-					"folderPath": "[parameters('ProcessedFile_properties_typeProperties_folderPath')]"
+					"folderPath": "adfdemo/stage"
 				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureStorageLinkedService')]"
-			]
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/SourceFile')]",
@@ -323,7 +291,6 @@
 						"defaultValue": "18"
 					}
 				},
-				"annotations": [],
 				"type": "AzureBlobFSFile",
 				"structure": [
 					{
@@ -491,30 +458,10 @@
 						"skipLineCount": 1,
 						"firstRowAsHeader": false
 					},
-					"fileName": "[parameters('SourceFile_properties_typeProperties_fileName')]",
-					"folderPath": "[parameters('SourceFile_properties_typeProperties_folderPath')]"
+					"fileName": "un_test_file.txt",
+					"folderPath": "adfdemo/rawdata"
 				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureStorageLinkedService')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureStorageLinkedService')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('AzureStorageLinkedService_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('AzureStorageLinkedService_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
+			}
 		}
 	]
 }
