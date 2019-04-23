@@ -11,6 +11,9 @@
 				"defaultValue": 18
 			}
 		},
+		"folder": {
+			"name": "Initial Test"
+		},
 		"type": "AzureBlobFSFile",
 		"structure": [
 			{

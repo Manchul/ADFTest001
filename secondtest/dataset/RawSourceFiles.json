@@ -1,5 +1,5 @@
 {
-	"name": "ProcessedFile",
+	"name": "RawSourceFiles",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureStorageLinkedService",
@@ -10,6 +10,14 @@
 		},
 		"type": "AzureBlobFSFile",
 		"structure": [
+			{
+				"name": "Prop_0",
+				"type": "String"
+			},
+			{
+				"name": "Prop_1",
+				"type": "String"
+			},
 			{
 				"name": "Prop_2",
 				"type": "String"
@@ -160,12 +168,15 @@
 				"type": "TextFormat",
 				"columnDelimiter": "\t",
 				"rowDelimiter": "",
+				"quoteChar": "\"",
 				"nullValue": "\\N",
+				"encodingName": null,
 				"treatEmptyAsNull": true,
-				"skipLineCount": 0,
+				"skipLineCount": 18,
 				"firstRowAsHeader": false
 			},
-			"folderPath": "adfdemo/stage"
+			"fileName": "@item().name",
+			"folderPath": "adfdemo/rawdata"
 		}
 	}
 }

@@ -1,5 +1,5 @@
 {
-	"name": "ProcessedFile",
+	"name": "ProcessedFiles",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureStorageLinkedService",
@@ -160,11 +160,14 @@
 				"type": "TextFormat",
 				"columnDelimiter": "\t",
 				"rowDelimiter": "",
+				"quoteChar": "\"",
 				"nullValue": "\\N",
+				"encodingName": null,
 				"treatEmptyAsNull": true,
-				"skipLineCount": 0,
+				"skipLineCount": 1,
 				"firstRowAsHeader": false
 			},
+			"fileName": "",
 			"folderPath": "adfdemo/stage"
 		}
 	}
